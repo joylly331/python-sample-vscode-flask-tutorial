@@ -8,6 +8,8 @@ trigger:
 
 pool:
   vmImage: ubuntu-latest
+steps:
+- bash: echo "Hello world"
 
 steps:
 - task: UsePythonVersion@0
@@ -15,8 +17,7 @@ steps:
     versionSpec: '3.6'
   displayName: 'Use Python 3.6'
 
-- script: |
-  bash: echo "Hello world"
+
 
 - script: |
     python -m pip install --upgrade pip
@@ -30,3 +31,4 @@ steps:
 
 - script: |
     python src/example.py
+  displayName: 'demand'
